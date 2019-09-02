@@ -1,9 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import Index from "./components/index";
-import Articles from "./components/articles";
-import Article from "./components/article";
+import Main from "./components/main";
+import Carousel from "./components/carousel";
 
 class App extends React.Component {
 	constructor(props) {
@@ -12,27 +11,10 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="wrapper">
 				<Router>
-					<div>
-						<nav>
-							<ul>
-								<li>
-									<Link to="/">Home</Link>
-								</li>
-								<li>
-									<Link to="/articles/">Articles</Link>
-								</li>
-								<li>
-									<Link to="/article/">Single Article</Link>
-								</li>
-							</ul>
-						</nav>
-
-						<Route path="/" exact component={Index} />
-						<Route path="/articles/" component={Articles} />
-						<Route path="/article/" component={Article} />
-					</div>
+					<Route path="/" exact component={Main} />
+					<Route path="/:id/" component={Carousel} />
 				</Router>
 			</div>
 		);

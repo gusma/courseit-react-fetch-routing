@@ -1,0 +1,24 @@
+.wrapper {
+	min-height: 500px;
+	width: 80%;
+}
+.articles {
+	display: flex;
+}
+.articles li {
+	margin: 10px;
+	list-style-type: none;
+	width: 20%;
+	padding: 5px;
+}
+.articles img {
+	height: 150px;
+}
+.articles p {
+	text-align: justify;
+	padding: 5px;
+	text-transform: uppercase;
+}
+input {
+	padding: 10px;
+}
