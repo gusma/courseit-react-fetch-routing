@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import "./article.css";
+import logomeli from "../images/logo_apaisado.png";
+import "./carousel.css";
 
 class Argentina extends React.Component {
 	state = {
@@ -39,14 +40,25 @@ class Argentina extends React.Component {
 
 		return (
 			<div>
-				<form>
-					<input
-						placeholder="Search for..."
-						ref={input => (this.search = input)}
-						onChange={this.handleInputChange}
-						placeholder="camisetas de futbol"
-					/>
-				</form>
+				<header>
+					<div className="left">
+						<img
+							src="https://http2.mlstatic.com/ui/navigation/4.5.3/mercadolibre/logo__large_plus.png"
+							alt="Logo MercadoLibre"
+						/>
+						<form>
+							<input
+								placeholder="Search for..."
+								ref={input => (this.search = input)}
+								onChange={this.handleInputChange}
+								placeholder="camisetas de futbol"
+							/>
+						</form>
+					</div>
+					<div className="right">
+						<img src="https://http2.mlstatic.com/resources/deals/exhibitors_resources/mla-menu-desktop-notification-picture-86b2b844-4c2d-4b7c-8649-4fef867e0b9d.png" />
+					</div>
+				</header>
 				<ul className="articles">
 					{results &&
 						results.map(item => (

@@ -11,7 +11,7 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div className="wrapper">
+			<div>
 				<Router>
 					<Route path="/" exact component={Main} />
 					<Route path="/:id/" component={Carousel} />
