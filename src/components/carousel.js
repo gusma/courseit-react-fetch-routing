@@ -3,17 +3,19 @@ import axios from "axios";
 import logomeli from "../images/logo_apaisado.png";
 import "./carousel.css";
 
-class Argentina extends React.Component {
+class Carousel extends React.Component {
 	state = {
 		query: "",
 		results: [],
-		id: null
+		id: null,
+		siteId: this.props.match.params.site
 	};
 
 	getInfo = () => {
 		axios
+
 			.get(
-				`https://api.mercadolibre.com/sites/MLA/search?q=${this.state.query}&limit=5`
+				`https://api.mercadolibre.com/sites/${this.props.match.params.id}/search?q=${this.state.query}&limit=5`
 			)
 			.then(({ data }) => {
 				// console.log(data.results);
@@ -68,10 +70,11 @@ class Argentina extends React.Component {
 								<p>$ {item.price}</p>
 							</li>
 						))}
-				</ul>{" "}
+				</ul>
+				<p>The id is {this.props.match.params.id}</p>
 			</div>
 		);
 	}
 }
 
-export default Argentina;
+export default Carousel;

@@ -14,7 +14,7 @@ class App extends React.Component {
 			<div>
 				<Router>
 					<Route path="/" exact component={Main} />
-					<Route path="/:id/" component={Carousel} />
+					<Route path="/carousel/:id/" component={Carousel} />
 				</Router>
 			</div>
 		);
